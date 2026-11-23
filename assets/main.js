@@ -30,9 +30,9 @@ var VEHICLE_CATALOG = [
     ac: "Full AC",
     luggage: "2–3 Bags",
     image: "assets/images/car-sedan.jpg",
-    alt: "Executive silver Mercedes sedan taxi parked on stone driveway for Ayodhya local and outstation travel",
-    description: "Refined 4-seater AC Mercedes sedan suited for comfortable local darshan, railway station transfers, and quiet highway journeys.",
-    availabilityNote: "Model subject to fleet availability at booking."
+    alt: "Ayodhya local aur outstation yatra ke liye silver Mercedes sedan taxi",
+    description: "Local darshan, railway station pickup aur lambi highway yatra ke liye aaramdayak 4-seater AC Mercedes sedan.",
+    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
   },
   {
     id: "swift-dzire",
@@ -43,22 +43,22 @@ var VEHICLE_CATALOG = [
     ac: "Full AC",
     luggage: "2 Bags",
     image: "assets/images/car-swift-dzire.jpg",
-    alt: "White Swift Dzire compact sedan taxi ready for Ayodhya cab booking",
-    description: "Practical, fuel-efficient compact sedan ideal for couples, solo travellers, and smooth navigation through Ayodhya city routes.",
-    availabilityNote: "Model subject to fleet availability at booking."
+    alt: "Ayodhya cab booking ke liye white Swift Dzire compact sedan",
+    description: "Couples, akele yatri aur local Ayodhya darshan ke liye achhi gaadi. AC seating ke saath city travel ke liye upyukt.",
+    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
   },
   {
     id: "maruti-ertiga",
     name: "Maruti Ertiga",
     category: "mpv",
-    categoryLabel: "Family MPV",
+    categoryLabel: "Family 7-Seater",
     seats: "6–7 Passengers + Driver",
     ac: "Dual-Zone AC",
     luggage: "3–4 Bags",
     image: "assets/images/car-maruti-ertiga.png",
-    alt: "White Maruti Ertiga 7-seater family MPV taxi with Ayodhya backdrop for group and family travel",
-    description: "Versatile 7-seater family MPV offering generous legroom and balanced comfort for family pilgrimages and outstation trips.",
-    availabilityNote: "Model subject to fleet availability at booking."
+    alt: "Ayodhya family yatra ke liye white Maruti Ertiga 7-seater taxi",
+    description: "Family aur group ke saath Ayodhya darshan aur doosre shehron ki yatra ke liye 3-row seating wali gaadi.",
+    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
   },
   {
     id: "honda-elevate",
@@ -69,35 +69,35 @@ var VEHICLE_CATALOG = [
     ac: "Full AC",
     luggage: "3–4 Bags",
     image: "assets/images/car-honda-elevate.jpg",
-    alt: "Silver Honda Elevate SUV taxi parked for Ayodhya local and outstation travel",
-    description: "Refined 4-seater + 1 driver AC SUV offering smooth highway stability, upright seating, and comfortable luggage space for Ayodhya and outstation trips.",
-    availabilityNote: "Model subject to fleet availability at booking."
+    alt: "Ayodhya local aur outstation yatra ke liye silver Honda Elevate SUV taxi",
+    description: "Ayodhya darshan aur outstation trips ke liye aaramdayak 4 seater + 1 driver AC SUV, jisme luggage ke liye achhi jagah milti hai.",
+    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
   },
   {
     id: "toyota-innova-crysta",
     name: "Toyota Innova Crysta",
     category: "mpv",
-    categoryLabel: "Executive MPV",
+    categoryLabel: "Executive Touring",
     seats: "6–7 Passengers + Driver",
     ac: "Climate Control AC",
     luggage: "4–5 Bags",
     image: "assets/images/car-innova-crysta.jpg",
-    alt: "Pearl white Toyota Innova Crysta executive MPV at heritage hotel portico",
-    description: "Premium executive MPV featuring plush interiors and supportive seating for VIP guests, corporate visits, and long family tours.",
-    availabilityNote: "Model subject to fleet availability at booking."
+    alt: "Family aur VIP yatra ke liye white Toyota Innova Crysta",
+    description: "Lambi doori ki yatra aur parivaar ke saath safar ke liye spacious aur aaramdayak gaadi.",
+    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
   },
   {
     id: "kia-carens",
     name: "Kia Carens",
     category: "mpv",
-    categoryLabel: "Modern MPV",
+    categoryLabel: "Modern 7-Seater",
     seats: "6–7 Passengers + Driver",
     ac: "Roof-Vented AC",
     luggage: "3–4 Bags",
     image: "assets/images/car-kia-carens.png",
-    alt: "Royal blue Kia Carens modern 7-seater MPV for comfortable regional travel",
-    description: "Contemporary 3-row MPV combining quiet cabin acoustics, easy third-row access, and refined comfort for family travel.",
-    availabilityNote: "Model subject to fleet availability at booking."
+    alt: "Family yatra ke liye Kia Carens 7-seater car",
+    description: "Family trip aur group travel ke liye modern 3-row seating wali gaadi, jisme safar ke dauran achhi jagah milti hai.",
+    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
   },
   {
     id: "tempo-traveller",
@@ -108,22 +108,22 @@ var VEHICLE_CATALOG = [
     ac: "High-Capacity AC",
     luggage: "Dedicated Carrier & Boot",
     image: "assets/images/car-tempo-traveller.jpeg",
-    alt: "White AC Tempo Traveller tourist coach for group yatras and wedding guests in Ayodhya",
-    description: "Spacious pushback-seat tourist coach tailored for joint families, pilgrimage yatras, corporate outings, and Baraat guest movement.",
-    availabilityNote: "Seating configuration confirmed upon advance reservation."
+    alt: "Group yatra ke liye white AC Tempo Traveller Ayodhya mein",
+    description: "Bade parivaar, yatri mandali, senior citizen groups aur baraat ke mehmaanon ke liye pushback seats wala AC Tempo Traveller.",
+    availabilityNote: "Advance booking par seating capacity confirm ki jati hai."
   },
   {
     id: "wedding-cars",
     name: "Wedding Cars",
     category: "other",
-    categoryLabel: "Wedding & Event Fleet",
+    categoryLabel: "Wedding & Shubh Vivah Fleet",
     seats: "Luxury Sedans · SUVs · Baraat Fleet",
     ac: "AC & Floral Decor Options",
     luggage: "Flexible Capacity",
     image: "assets/images/wedding-car-fleet.jpg",
-    alt: "Decorated white luxury wedding sedan and custom fleet arrangements in Ayodhya",
-    description: "Dedicated wedding cars for Shubh Vivah, groom arrival sedans, VIP family vehicles, and coordinated guest shuttle arrangements across Ayodhya.",
-    availabilityNote: "Arranged on request based on travel dates and group size."
+    alt: "Shaadi-vivah ke liye saji hui white wedding car Ayodhya mein",
+    description: "Shaadi mein dulha-dulhan ki car, parivaar ke liye gaadiyan aur baraat ke mehmaanon ke liye shuttle cars ki suvidha.",
+    availabilityNote: "Travel dates aur zaroorat ke hisaab se book karein."
   }
 ];
 
@@ -156,7 +156,7 @@ function buildWhatsAppLink(whatsappNumber, message) {
   if (!digits) {
     return "";
   }
-  var text = encodeURIComponent(message || "Hello Ayodhyadham Tour Travels, I would like to enquire about a taxi booking.");
+  var text = encodeURIComponent(message || "Namaste Ayodhyadham Tour Travels, mujhe Ayodhya mein taxi booking ke baare mein jaankari chahiye.");
   return "https://wa.me/" + digits + "?text=" + text;
 }
 
@@ -170,28 +170,28 @@ function validateEnquiry(data) {
   var travelDate = String((data && data.travelDate) || "").trim();
 
   if (name.length < 2) {
-    errors.name = "Please enter your full name (at least 2 characters).";
+    errors.name = "Kripya apna poora naam likhein (kam se kam 2 akshar).";
   }
 
   var phoneDigits = phone.replace(/\D/g, "");
   if (phoneDigits.length < 10 || phoneDigits.length > 13) {
-    errors.phone = "Please enter a valid 10-digit mobile number.";
+    errors.phone = "Kripya sahi 10-digit mobile number likhein.";
   }
 
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errors.email = "Please enter a valid email address or leave it blank.";
+    errors.email = "Kripya sahi email address likhein ya ise khali chhodein.";
   }
 
   if (!serviceType) {
-    errors.serviceType = "Please select a travel service.";
+    errors.serviceType = "Kripya travel service chunein.";
   }
 
   if (pickupLocation.length < 2) {
-    errors.pickupLocation = "Please enter your pickup location.";
+    errors.pickupLocation = "Kripya pickup location likhein.";
   }
 
   if (!travelDate) {
-    errors.travelDate = "Please select your preferred travel date.";
+    errors.travelDate = "Kripya apni yatra ki date chunein.";
   }
 
   return {
@@ -276,7 +276,7 @@ function initMobileDrawer() {
 
   function setDrawerState(open) {
     toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
-    toggleBtn.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    toggleBtn.setAttribute("aria-label", open ? "Menu band karein" : "Menu kholein");
     toggleBtn.innerHTML = open
       ? '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
       : '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
@@ -450,7 +450,7 @@ function createVehicleCardMarkup(vehicle, idx) {
         '<p class="vehicle-desc">' + escapeHtml(vehicle.description) + '</p>' +
         '<div class="vehicle-specs">' +
           '<p class="vehicle-availability">' + escapeHtml(vehicle.availabilityNote) + ' Luggage: ' + escapeHtml(vehicle.luggage) + '.</p>' +
-          '<a class="btn btn-saffron btn-sm" href="' + escapeHtml(href) + '">Enquire for ' + escapeHtml(vehicle.name) + '</a>' +
+          '<a class="btn btn-saffron btn-sm" href="' + escapeHtml(href) + '">' + escapeHtml(vehicle.name) + ' Book Karein</a>' +
         '</div>' +
       '</div>' +
     '</article>'
@@ -471,7 +471,7 @@ function initVehiclesCatalogPage() {
       return createVehicleCardMarkup(vehicle, idx);
     }).join("");
     if (countEl) {
-      countEl.textContent = "Showing " + list.length + (list.length === 1 ? " category" : " categories");
+      countEl.textContent = list.length + (list.length === 1 ? " category dikh rahi hai" : " categories dikh rahi hain");
     }
   }
 
@@ -512,8 +512,11 @@ function initContactPage() {
 
   var dateInput = document.getElementById("travel-date");
   if (dateInput) {
-    var today = new Date().toISOString().split("T")[0];
-    dateInput.setAttribute("min", today);
+    var now = new Date();
+    var yyyy = String(now.getFullYear());
+    var mm = String(now.getMonth() + 1).padStart(2, "0");
+    var dd = String(now.getDate()).padStart(2, "0");
+    dateInput.setAttribute("min", yyyy + "-" + mm + "-" + dd);
   }
 
   if (callBtn) {
@@ -525,7 +528,7 @@ function initContactPage() {
         event.preventDefault();
         if (actionFeedback) {
           actionFeedback.hidden = false;
-          actionFeedback.textContent = "Direct phone calling will be active once our contact number is published. Please submit the enquiry form or visit our Tedhi Bazar, Ayodhya office.";
+          actionFeedback.textContent = "Phone calling abhi chalu nahi hai. Kripya enquiry form bharein ya Tedhi Bazar, Ayodhya office par aayein.";
         }
       }
     });
@@ -534,7 +537,7 @@ function initContactPage() {
   if (whatsappBtn) {
     var defaultWaHref = buildWhatsAppLink(
       SITE_CONFIG.whatsappNumber,
-      "Hello Ayodhyadham Tour Travels, I would like to enquire about taxi / travel booking in Ayodhya."
+      "Namaste Ayodhyadham Tour Travels, mujhe Ayodhya mein taxi booking ke baare mein jaankari chahiye."
     );
     if (defaultWaHref) {
       whatsappBtn.setAttribute("href", defaultWaHref);
@@ -547,7 +550,7 @@ function initContactPage() {
         event.preventDefault();
         if (actionFeedback) {
           actionFeedback.hidden = false;
-          actionFeedback.textContent = "WhatsApp booking will be active once our phone number is added. Please submit the enquiry form beside this panel to send your request.";
+          actionFeedback.textContent = "WhatsApp number abhi update kiya ja raha hai. Kripya enquiry form bharkar apni details bhejein.";
         }
       }
     });
@@ -623,7 +626,7 @@ function initContactPage() {
       if (statusBox) {
         statusBox.hidden = false;
         statusBox.className = "form-status is-error";
-        statusBox.textContent = "Please review and complete the highlighted required fields before submitting.";
+        statusBox.textContent = "Kripya laal rang se dikhaye gaye zaroori fields sahi se bharein.";
       }
       var firstInvalid = form.querySelector(".is-invalid");
       if (firstInvalid) {
@@ -634,34 +637,37 @@ function initContactPage() {
 
     var summaryLines = [
       "Travel Enquiry — " + SITE_CONFIG.businessName,
-      "Name: " + payload.name.trim(),
+      "Naam: " + payload.name.trim(),
       "Mobile: " + payload.phone.trim(),
       "Service: " + payload.serviceType,
-      "Preferred Vehicle: " + (payload.vehiclePreference || "Any Available"),
+      "Pasand Ki Gaadi: " + (payload.vehiclePreference || "Koi Bhi Available"),
       "Pickup Location: " + payload.pickupLocation.trim(),
       "Travel Date: " + payload.travelDate,
-      payload.notes.trim() ? "Notes: " + payload.notes.trim() : ""
+      payload.notes.trim() ? "Khaas Jaankari: " + payload.notes.trim() : ""
     ].filter(Boolean).join("\n");
 
     var waHref = buildWhatsAppLink(SITE_CONFIG.whatsappNumber, summaryLines);
-    var mailtoSubject = encodeURIComponent("Booking Enquiry from " + payload.name.trim() + " (" + payload.travelDate + ")");
+    var hasRealEmail = Boolean(SITE_CONFIG.email && !/\.example$/i.test(SITE_CONFIG.email));
+    var mailtoSubject = encodeURIComponent("Booking Enquiry: " + payload.name.trim() + " (" + payload.travelDate + ")");
     var mailtoBody = encodeURIComponent(summaryLines);
-    var mailHref = "mailto:" + SITE_CONFIG.email + "?subject=" + mailtoSubject + "&body=" + mailtoBody;
+    var mailHref = hasRealEmail ? ("mailto:" + SITE_CONFIG.email + "?subject=" + mailtoSubject + "&body=" + mailtoBody) : "";
+    var telHref = SITE_CONFIG.phoneTel ? ("tel:" + SITE_CONFIG.phoneTel) : "";
 
     if (statusBox) {
       statusBox.hidden = false;
       statusBox.className = "form-status is-success";
       statusBox.innerHTML =
-        "<strong>Enquiry details verified for " + escapeHtml(payload.name.trim()) + ".</strong> " +
-        "Your request for <strong>" + escapeHtml(payload.vehiclePreference || payload.serviceType) + "</strong> on <span class=\"tabular-nums\">" + escapeHtml(payload.travelDate) + "</span> is ready. " +
-        (waHref
-          ? "Send directly via WhatsApp or email below for confirmation."
-          : "You can send these details directly via email below or visit our Tedhi Bazar, Ayodhya office.") +
+        "<strong>" + escapeHtml(payload.name.trim()) + " ji, aapki booking details taiyaar hain.</strong> " +
+        "<strong>" + escapeHtml(payload.vehiclePreference || payload.serviceType) + "</strong> (<span class=\"tabular-nums\">" + escapeHtml(payload.travelDate) + "</span>) ke liye booking confirm karne ke liye neeche WhatsApp ya Call button par click karein." +
         '<div class="form-status-actions">' +
           (waHref
-            ? '<a class="btn btn-whatsapp btn-sm" href="' + escapeHtml(waHref) + '" target="_blank" rel="noopener noreferrer">Send on WhatsApp</a>'
+            ? '<a class="btn btn-whatsapp btn-sm" href="' + escapeHtml(waHref) + '" target="_blank" rel="noopener noreferrer">WhatsApp Par Bhejein</a>'
             : "") +
-          '<a class="btn btn-outline-maroon btn-sm" href="' + escapeHtml(mailHref) + '">Send via Email</a>' +
+          (mailHref
+            ? '<a class="btn btn-outline-maroon btn-sm" href="' + escapeHtml(mailHref) + '">Email Bhejein</a>'
+            : (telHref
+              ? '<a class="btn btn-outline-maroon btn-sm" href="' + escapeHtml(telHref) + '">Call Karein: ' + escapeHtml(SITE_CONFIG.phoneDisplay) + '</a>'
+              : "")) +
         "</div>";
     }
 

@@ -12,13 +12,13 @@ export default defineConfig(() => {
           if (error) {
             return;
           }
-          const distDir = path.resolve(__dirname, 'dist');
-          const rootAssets = path.resolve(__dirname, 'assets');
+          const distDir = path.resolve(import.meta.dirname, 'dist');
+          const rootAssets = path.resolve(import.meta.dirname, 'assets');
           const distAssets = path.resolve(distDir, 'assets');
           if (fs.existsSync(distDir) && fs.existsSync(rootAssets)) {
             fs.cpSync(rootAssets, distAssets, {recursive: true, force: true});
           }
-          const readmeSrc = path.resolve(__dirname, 'README.txt');
+          const readmeSrc = path.resolve(import.meta.dirname, 'README.txt');
           const readmeDist = path.resolve(distDir, 'README.txt');
           if (fs.existsSync(distDir) && fs.existsSync(readmeSrc)) {
             fs.copyFileSync(readmeSrc, readmeDist);
@@ -29,10 +29,10 @@ export default defineConfig(() => {
     build: {
       rollupOptions: {
         input: {
-          main: path.resolve(__dirname, 'index.html'),
-          about: path.resolve(__dirname, 'about.html'),
-          vehicles: path.resolve(__dirname, 'vehicles.html'),
-          contact: path.resolve(__dirname, 'contact.html'),
+          main: path.resolve(import.meta.dirname, 'index.html'),
+          about: path.resolve(import.meta.dirname, 'about.html'),
+          vehicles: path.resolve(import.meta.dirname, 'vehicles.html'),
+          contact: path.resolve(import.meta.dirname, 'contact.html'),
         },
       },
     },
