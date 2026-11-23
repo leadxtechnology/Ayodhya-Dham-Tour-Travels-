@@ -1,6 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import {fileURLToPath} from 'url';
 import {defineConfig} from 'vite';
+
+const ROOT_DIR = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(() => {
   return {
@@ -12,13 +15,13 @@ export default defineConfig(() => {
           if (error) {
             return;
           }
-          const distDir = path.resolve(import.meta.dirname, 'dist');
-          const rootAssets = path.resolve(import.meta.dirname, 'assets');
+          const distDir = path.resolve(ROOT_DIR, 'dist');
+          const rootAssets = path.resolve(ROOT_DIR, 'assets');
           const distAssets = path.resolve(distDir, 'assets');
           if (fs.existsSync(distDir) && fs.existsSync(rootAssets)) {
             fs.cpSync(rootAssets, distAssets, {recursive: true, force: true});
           }
-          const readmeSrc = path.resolve(import.meta.dirname, 'README.txt');
+          const readmeSrc = path.resolve(ROOT_DIR, 'README.txt');
           const readmeDist = path.resolve(distDir, 'README.txt');
           if (fs.existsSync(distDir) && fs.existsSync(readmeSrc)) {
             fs.copyFileSync(readmeSrc, readmeDist);
@@ -29,10 +32,10 @@ export default defineConfig(() => {
     build: {
       rollupOptions: {
         input: {
-          main: path.resolve(import.meta.dirname, 'index.html'),
-          about: path.resolve(import.meta.dirname, 'about.html'),
-          vehicles: path.resolve(import.meta.dirname, 'vehicles.html'),
-          contact: path.resolve(import.meta.dirname, 'contact.html'),
+          main: path.resolve(ROOT_DIR, 'index.html'),
+          about: path.resolve(ROOT_DIR, 'about.html'),
+          vehicles: path.resolve(ROOT_DIR, 'vehicles.html'),
+          contact: path.resolve(ROOT_DIR, 'contact.html'),
         },
       },
     },
