@@ -10,13 +10,31 @@
 
 var SITE_CONFIG = {
   businessName: "Ayodhyadham Tour Travels",
+  hostName: "Shyam Gupta",
   address: "Tedhi Bazar, Ayodhya Railway Crossing, Pin – 224123, Uttar Pradesh, India",
   phoneDisplay: "+91 92782 14121",
   phoneTel: "+919278214121",
   whatsappNumber: "919278214121",
+  topWhatsappNumber: "919120671665",
+  topWhatsappMessage: "Namaste, mujhe Ayodhyadham Tour Travels se taxi booking ke baare mein jaankari chahiye.",
   email: "info@ayodhyadhamtourtravels.example", // Replace with your official business email
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Tedhi+Bazar+Ayodhya+Railway+Crossing+224123+Uttar+Pradesh+India"
 };
+
+var SERVICE_AREAS = [
+  "Ayodhya",
+  "Lucknow",
+  "Varanasi",
+  "Prayagraj",
+  "Gorakhpur",
+  "Gonda",
+  "Kanpur",
+  "Delhi",
+  "Agra",
+  "Mathura",
+  "Chitrakoot",
+  "Naimisharanya"
+];
 
 /* Editable Fleet & Taxi Categories
    Note: Availability of specific models depends on booking schedule. */
@@ -270,11 +288,23 @@ function initHeaderScroll() {
 function initMobileDrawer() {
   var toggleBtn = document.getElementById("mobile-menu-toggle");
   var drawer = document.getElementById("mobile-drawer");
+  var siteHeader = document.querySelector(".site-header");
   if (!toggleBtn || !drawer) {
     return;
   }
 
+  function updateDrawerOffset() {
+    if (!siteHeader) {
+      return;
+    }
+    var rect = siteHeader.getBoundingClientRect();
+    drawer.style.top = Math.max(0, Math.round(rect.bottom)) + "px";
+  }
+
   function setDrawerState(open) {
+    if (open) {
+      updateDrawerOffset();
+    }
     toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
     toggleBtn.setAttribute("aria-label", open ? "Menu band karein" : "Menu kholein");
     toggleBtn.innerHTML = open
@@ -283,6 +313,18 @@ function initMobileDrawer() {
     drawer.classList.toggle("is-open", open);
     drawer.setAttribute("aria-hidden", open ? "false" : "true");
   }
+
+  window.addEventListener("scroll", function () {
+    if (drawer.classList.contains("is-open")) {
+      updateDrawerOffset();
+    }
+  }, { passive: true });
+
+  window.addEventListener("resize", function () {
+    if (drawer.classList.contains("is-open")) {
+      updateDrawerOffset();
+    }
+  });
 
   toggleBtn.addEventListener("click", function (event) {
     event.stopPropagation();
@@ -407,6 +449,14 @@ function syncDynamicContactText() {
   phoneLinkElements.forEach(function (el) {
     if (SITE_CONFIG.phoneTel) {
       el.setAttribute("href", "tel:" + SITE_CONFIG.phoneTel);
+    }
+  });
+
+  var topWaHref = buildWhatsAppLink(SITE_CONFIG.topWhatsappNumber, SITE_CONFIG.topWhatsappMessage);
+  var topWaLinks = document.querySelectorAll("[data-top-whatsapp-link]");
+  topWaLinks.forEach(function (el) {
+    if (topWaHref) {
+      el.setAttribute("href", topWaHref);
     }
   });
 
@@ -853,6 +903,7 @@ if (typeof document !== "undefined") {
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     SITE_CONFIG: SITE_CONFIG,
+    SERVICE_AREAS: SERVICE_AREAS,
     VEHICLE_CATALOG: VEHICLE_CATALOG,
     filterVehicles: filterVehicles,
     validateEnquiry: validateEnquiry,

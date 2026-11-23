@@ -5,6 +5,7 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const {
   SITE_CONFIG,
+  SERVICE_AREAS,
   VEHICLE_CATALOG,
   filterVehicles,
   validateEnquiry,
@@ -13,12 +14,36 @@ const {
   computeCursorLerp,
 } = require('../assets/main.js');
 
-test('SITE_CONFIG retains required business name, Tedhi Bazar address, and call number', () => {
+test('SITE_CONFIG retains required business name, Tedhi Bazar address, call number, and distinct WhatsApp number', () => {
   assert.equal(SITE_CONFIG.businessName, 'Ayodhyadham Tour Travels');
+  assert.equal(SITE_CONFIG.hostName, 'Shyam Gupta');
   assert.match(SITE_CONFIG.address, /Tedhi Bazar, Ayodhya Railway Crossing/i);
   assert.match(SITE_CONFIG.address, /224123/);
   assert.equal(SITE_CONFIG.phoneTel, '+919278214121');
   assert.match(SITE_CONFIG.phoneDisplay, /92782\s*14121/);
+  assert.equal(SITE_CONFIG.topWhatsappNumber, '919120671665');
+  assert.notEqual(SITE_CONFIG.topWhatsappNumber, SITE_CONFIG.phoneTel.replace(/\D/g, ''));
+  assert.equal(
+    buildWhatsAppLink(SITE_CONFIG.topWhatsappNumber, SITE_CONFIG.topWhatsappMessage),
+    'https://wa.me/919120671665?text=Namaste%2C%20mujhe%20Ayodhyadham%20Tour%20Travels%20se%20taxi%20booking%20ke%20baare%20mein%20jaankari%20chahiye.'
+  );
+});
+
+test('SERVICE_AREAS lists all 12 expected cities in exact sequence', () => {
+  assert.deepEqual(SERVICE_AREAS, [
+    'Ayodhya',
+    'Lucknow',
+    'Varanasi',
+    'Prayagraj',
+    'Gorakhpur',
+    'Gonda',
+    'Kanpur',
+    'Delhi',
+    'Agra',
+    'Mathura',
+    'Chitrakoot',
+    'Naimisharanya',
+  ]);
 });
 
 test('VEHICLE_CATALOG includes all required vehicle categories', () => {

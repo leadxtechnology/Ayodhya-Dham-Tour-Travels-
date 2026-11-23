@@ -708,6 +708,262 @@ p {
 }
 
 /* ==========================================================================
+   Top Contact & Booking Bar (Deep Maroon, Bhagwa Saffron & Temple Gold)
+   ========================================================================== */
+.top-contact-bar {
+  position: relative;
+  z-index: 215;
+  background: linear-gradient(90deg, var(--maroon-950) 0%, var(--maroon-900) 50%, var(--maroon-950) 100%);
+  color: var(--ivory);
+  border-bottom: 1px solid rgba(201, 148, 46, 0.34);
+  padding: 9px 0;
+}
+
+.top-contact-inner {
+  max-width: 1380px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 14px;
+  flex-wrap: wrap;
+}
+
+.top-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 auto;
+}
+
+.top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(99, 24, 30, 0.56);
+  border: 1px solid rgba(201, 148, 46, 0.38);
+  color: var(--ivory-soft);
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.top-badge svg {
+  width: 13px;
+  height: 13px;
+  color: var(--gold-300);
+  flex-shrink: 0;
+}
+
+.top-badge-host {
+  border-color: rgba(223, 176, 84, 0.55);
+  background: rgba(74, 16, 20, 0.78);
+  color: var(--ivory);
+}
+
+.top-badge-host strong {
+  color: var(--gold-300);
+  font-weight: 700;
+}
+
+.top-badge-link:hover {
+  border-color: var(--gold-300);
+  background: rgba(201, 148, 46, 0.18);
+  color: var(--ivory);
+}
+
+.top-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+
+.top-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 15px;
+  min-height: 36px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s var(--ease-luxury), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.top-cta-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.top-cta-btn:hover {
+  transform: translateY(-1px);
+}
+
+.top-cta-btn:active {
+  transform: translateY(0);
+}
+
+.top-cta-call {
+  background: linear-gradient(135deg, var(--gold-300) 0%, var(--gold-400) 58%, var(--saffron-400) 100%);
+  color: var(--maroon-950);
+  border-color: rgba(255, 253, 249, 0.45);
+  box-shadow: 0 8px 18px -10px rgba(223, 176, 84, 0.65);
+}
+
+.top-cta-call:hover {
+  background: linear-gradient(135deg, #f6e0ae 0%, var(--gold-300) 65%, var(--gold-400) 100%);
+  box-shadow: 0 12px 24px -10px rgba(223, 176, 84, 0.8);
+}
+
+.top-cta-whatsapp {
+  background: rgba(74, 16, 20, 0.88);
+  color: var(--ivory);
+  border-color: rgba(223, 176, 84, 0.56);
+  box-shadow: 0 8px 18px -12px rgba(0, 0, 0, 0.5);
+}
+
+.top-cta-whatsapp .wa-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.top-cta-whatsapp .wa-icon-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+.top-cta-whatsapp:hover {
+  background: rgba(194, 77, 18, 0.28);
+  border-color: var(--gold-300);
+  color: #ffffff;
+  box-shadow: 0 10px 22px -10px rgba(201, 148, 46, 0.42);
+}
+
+/* ==========================================================================
+   Scrolling Service Areas City Ticker Bar
+   ========================================================================== */
+.city-ticker-bar {
+  position: relative;
+  z-index: 210;
+  background: linear-gradient(90deg, #240508 0%, #3d0c11 50%, #240508 100%);
+  border-bottom: 1px solid rgba(201, 148, 46, 0.44);
+  overflow: hidden;
+}
+
+.city-ticker-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 38px;
+}
+
+.city-ticker-label {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px 9px 24px;
+  background: linear-gradient(90deg, var(--maroon-950) 0%, var(--saffron-600) 100%);
+  border-right: 1px solid rgba(239, 211, 148, 0.45);
+  color: var(--ivory);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 10px 0 18px rgba(36, 5, 8, 0.55);
+}
+
+.city-ticker-label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-300);
+  box-shadow: 0 0 8px rgba(239, 211, 148, 0.8);
+  flex-shrink: 0;
+}
+
+.city-ticker-viewport {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  padding: 8px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22px, #000 calc(100% - 26px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 22px, #000 calc(100% - 26px), transparent 100%);
+}
+
+.city-ticker-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  will-change: transform;
+  animation: cityTickerScroll 34s linear infinite;
+}
+
+@media (hover: hover) {
+  .city-ticker-bar:hover .city-ticker-track {
+    animation-play-state: paused;
+  }
+}
+
+.city-ticker-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.city-ticker-item {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold-300);
+  white-space: nowrap;
+  padding: 0 14px;
+  line-height: 1.35;
+}
+
+.city-ticker-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-400);
+  box-shadow: 0 0 6px rgba(223, 176, 84, 0.55);
+  flex-shrink: 0;
+}
+
+@keyframes cityTickerScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* ==========================================================================
    Header & Navigation (Warm Cream Header + Maroon Text + Saffron CTA)
    ========================================================================== */
 .site-header {
@@ -2088,6 +2344,43 @@ html.reveal-ready [data-reveal].is-visible {
 }
 
 @media (max-width: 680px) {
+  .top-contact-bar {
+    padding: 8px 0;
+  }
+  .top-contact-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 9px;
+  }
+  .top-badges-list {
+    gap: 5px;
+  }
+  .top-badge {
+    font-size: 0.72rem;
+    padding: 4px 8px;
+  }
+  .top-cta-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+  }
+  .top-cta-btn {
+    min-height: 44px;
+    padding: 8px 10px;
+    font-size: 0.76rem;
+    gap: 5px;
+    width: 100%;
+  }
+  .city-ticker-label {
+    padding: 8px 12px 8px 16px;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+  }
+  .city-ticker-item {
+    font-size: 0.78rem;
+    padding: 0 11px;
+  }
   .section {
     padding: 60px 0;
   }
@@ -2161,6 +2454,12 @@ html.reveal-ready [data-reveal].is-visible {
   .intro-car-runner {
     width: 176px;
     height: 66px;
+  }
+}
+
+@media (max-width: 374px) {
+  .top-cta-group {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2298,5 +2597,22 @@ html.reveal-ready [data-reveal].is-visible {
   html.reveal-ready [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
+  }
+  .city-ticker-track {
+    animation: none !important;
+    width: auto;
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+  .city-ticker-group {
+    flex-wrap: wrap;
+  }
+  .city-ticker-group[aria-hidden="true"] {
+    display: none;
+  }
+  .city-ticker-viewport {
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow: visible;
   }
 }
