@@ -14,7 +14,7 @@ var SITE_CONFIG = {
   address: "Tedhi Bazar, Ayodhya Railway Crossing, Pin – 224123, Uttar Pradesh, India",
   phoneDisplay: "+91 92782 14121",
   phoneTel: "+919278214121",
-  whatsappNumber: "919278214121",
+  whatsappNumber: "919120671665",
   topWhatsappNumber: "919120671665",
   topWhatsappMessage: "Namaste, mujhe Ayodhyadham Tour Travels se taxi booking ke baare mein jaankari chahiye.",
   email: "info@ayodhyadhamtourtravels.example", // Replace with your official business email
@@ -53,15 +53,15 @@ var VEHICLE_CATALOG = [
     availabilityNote: "Travel date ke hisaab se gaadi ki availability confirm karein."
   },
   {
-    id: "maruti-aura",
-    name: "Maruti Aura",
+    id: "hyundai-aura",
+    name: "Hyundai Aura",
     category: "sedan",
     categoryLabel: "Sedan Taxi",
     seats: "4 Passengers + Driver",
     ac: "Full AC",
     luggage: "2–3 Bags",
-    image: "assets/images/car-sedan.jpg",
-    alt: "Airport transfer aur city darshan ke liye AC Sedan Taxi",
+    image: "/assets/aistudio/Hyundai_Aura_White_Studio_Showcase_21869af2.png",
+    alt: "Airport Transfer aur local darshan ke liye Hyundai Aura Sedan Taxi",
     description: "Airport Transfer, local sightseeing aur short outstation trips ke liye comfortable Sedan taxi suvidha.",
     availabilityNote: "Booking ke samay available Sedan model confirm kiya jata hai."
   },
@@ -79,16 +79,16 @@ var VEHICLE_CATALOG = [
     availabilityNote: "Travel date ke hisaab se availability confirm karein."
   },
   {
-    id: "toyota-innova",
-    name: "Toyota Innova",
+    id: "toyota-fortuner-black",
+    name: "Toyota Fortuner Black",
     category: "family",
     categoryLabel: "Big Family & SUV",
     seats: "6–7 Passengers + Driver",
     ac: "Dual AC",
     luggage: "4 Bags",
-    image: "assets/images/car-toyota-innova.jpg",
-    alt: "Lambi doori aur family yatra ke liye Toyota Innova 7-seater",
-    description: "Lambi doori ki yatra aur parivaar ke saath outstation travel ke liye mazboot aur aaramdayak Toyota Innova.",
+    image: "assets/images/car-toyota-fortuner-black.jpg",
+    alt: "Lambi doori ki yatra aur family trips ke liye Toyota Fortuner Black 7-seater SUV",
+    description: "Lambi doori ki yatra, VIP travel aur parivaar ke saath outstation trips ke liye mazboot aur premium Toyota Fortuner Black SUV.",
     availabilityNote: "Travel date ke hisaab se availability confirm karein."
   },
   {
@@ -261,20 +261,23 @@ function buildEnquirySummary(payload, businessName) {
   var notes = String((payload && payload.notes) || "").trim();
 
   var lines = [
-    "Travel Enquiry — " + (businessName || SITE_CONFIG.businessName),
-    "Naam: " + name,
-    "Mobile: " + phone,
-    "Booking Type: " + serviceType,
-    "Pickup Location: " + pickupLocation,
-    "Destination: " + destination,
-    "Travel Date: " + travelDate,
+    "Namaste " + (businessName || SITE_CONFIG.businessName) + "!",
+    "Mujhe taxi booking ke liye enquiry karni hai.",
+    name ? "Name: " + name : "",
+    phone ? "Mobile Number: " + phone : "",
+    serviceType ? "Booking Type: " + serviceType : "",
+    pickupLocation ? "Pickup Location: " + pickupLocation : "",
+    destination ? "Destination: " + destination : "",
+    travelDate ? "Travel Date: " + travelDate : "",
     shouldShowReturnDate(serviceType) && returnDate ? "Return Date: " + returnDate : "",
-    passengers ? "Number of Passengers: " + passengers : "",
-    "Preferred Vehicle: " + (vehiclePreference || "Koi Bhi Available"),
-    notes ? "Khaas Jaankari: " + notes : ""
+    passengers ? "Passengers: " + passengers : "",
+    vehiclePreference ? "Preferred Vehicle: " + vehiclePreference : "",
+    notes ? "Additional Requirements: " + notes : "",
+    "Please mujhe booking aur fare ki details batayein.",
+    "Thank you!"
   ];
 
-  return lines.filter(Boolean).join("\n");
+  return lines.filter(Boolean).join("\n\n");
 }
 
 function validateEnquiry(data) {
@@ -960,36 +963,23 @@ function initContactPage() {
 
     var summaryLines = buildEnquirySummary(payload, SITE_CONFIG.businessName);
     var waHref = buildWhatsAppLink(SITE_CONFIG.whatsappNumber, summaryLines);
-    var hasRealEmail = Boolean(SITE_CONFIG.email && !/\.example$/i.test(SITE_CONFIG.email));
-    var mailtoSubject = encodeURIComponent("Booking Enquiry: " + payload.name.trim() + " — " + payload.serviceType + " (" + payload.travelDate + ")");
-    var mailtoBody = encodeURIComponent(summaryLines);
-    var mailHref = hasRealEmail ? ("mailto:" + SITE_CONFIG.email + "?subject=" + mailtoSubject + "&body=" + mailtoBody) : "";
-    var telHref = SITE_CONFIG.phoneTel ? ("tel:" + SITE_CONFIG.phoneTel) : "";
-    var routeText = payload.pickupLocation.trim() + " se " + payload.destination.trim();
-    var dateSummary = shouldShowReturnDate(payload.serviceType) && payload.returnDate
-      ? payload.travelDate + " se " + payload.returnDate
-      : payload.travelDate;
 
     if (statusBox) {
       statusBox.hidden = false;
       statusBox.className = "form-status is-success";
-      statusBox.innerHTML =
-        "<strong>" + escapeHtml(payload.name.trim()) + " ji, aapki booking enquiry details taiyaar hain.</strong> " +
-        "<strong>" + escapeHtml(payload.serviceType) + "</strong> (" + escapeHtml(routeText) + ", <span class=\"tabular-nums\">" + escapeHtml(dateSummary) + "</span>) ke liye hamari team se baat karne aur availability confirm karne ke liye neeche WhatsApp ya Call button par click karein." +
-        '<div class="form-status-actions">' +
-          (waHref
-            ? '<a class="btn btn-whatsapp btn-sm" href="' + escapeHtml(waHref) + '" target="_blank" rel="noopener noreferrer">WhatsApp Par Bhejein</a>'
-            : "") +
-          (mailHref
-            ? '<a class="btn btn-outline-maroon btn-sm" href="' + escapeHtml(mailHref) + '">Email Bhejein</a>'
-            : (telHref
-              ? '<a class="btn btn-outline-maroon btn-sm" href="' + escapeHtml(telHref) + '">Call Karein: ' + escapeHtml(SITE_CONFIG.phoneDisplay) + '</a>'
-              : "")) +
-        "</div>";
+      statusBox.textContent = "WhatsApp chat khul rahi hai — apni booking enquiry bhejne ke liye WhatsApp par Send button dabayein.";
     }
 
-    form.reset();
-    syncReturnDateVisibility();
+    if (waHref) {
+      var waTrigger = document.createElement("a");
+      waTrigger.href = waHref;
+      waTrigger.target = "_blank";
+      waTrigger.rel = "noopener noreferrer";
+      waTrigger.style.display = "none";
+      document.body.appendChild(waTrigger);
+      waTrigger.click();
+      document.body.removeChild(waTrigger);
+    }
   });
 }
 

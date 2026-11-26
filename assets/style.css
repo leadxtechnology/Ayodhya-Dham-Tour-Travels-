@@ -1882,7 +1882,9 @@ p {
 .vehicle-media img[src*="car-honda-elevate.png"],
 .vehicle-media img[src*="car-maruti-suzuki-ertiga.png"],
 .vehicle-media img[src*="car-maruti-ertiga.png"],
-.vehicle-media img[src*="car-urbania-tempo-traveller.png"] {
+.vehicle-media img[src*="car-urbania-tempo-traveller.png"],
+.vehicle-media img[src*="Hyundai_Aura_White_Studio_Showcase_21869af2.png"],
+.vehicle-media img[src*="car-toyota-fortuner-black.jpg"] {
   object-fit: contain;
   padding: 10px;
   background: #ffffff;

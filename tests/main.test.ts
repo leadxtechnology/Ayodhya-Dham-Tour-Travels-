@@ -24,6 +24,7 @@ test('SITE_CONFIG retains required business name, Tedhi Bazar address, call numb
   assert.match(SITE_CONFIG.address, /224123/);
   assert.equal(SITE_CONFIG.phoneTel, '+919278214121');
   assert.match(SITE_CONFIG.phoneDisplay, /92782\s*14121/);
+  assert.equal(SITE_CONFIG.whatsappNumber, '919120671665');
   assert.equal(SITE_CONFIG.topWhatsappNumber, '919120671665');
   assert.notEqual(SITE_CONFIG.topWhatsappNumber, SITE_CONFIG.phoneTel.replace(/\D/g, ''));
   assert.equal(
@@ -53,9 +54,9 @@ test('VEHICLE_CATALOG cleanly separates all 4 vehicle categories', () => {
   const names = VEHICLE_CATALOG.map((v: { name: string }) => v.name);
   for (const required of [
     'Maruti Swift Dzire',
-    'Maruti Aura',
+    'Hyundai Aura',
     'Maruti Ertiga',
-    'Toyota Innova',
+    'Toyota Fortuner Black',
     'Toyota Innova Crysta',
     'Kia Carens',
     'Honda Elevate',
@@ -66,6 +67,14 @@ test('VEHICLE_CATALOG cleanly separates all 4 vehicle categories', () => {
   ]) {
     assert.ok(names.includes(required), `Missing vehicle: ${required}`);
   }
+  const aura = VEHICLE_CATALOG.find((v: { name: string }) => v.name === 'Hyundai Aura');
+  assert.equal(aura.image, '/assets/aistudio/Hyundai_Aura_White_Studio_Showcase_21869af2.png');
+  assert.equal(aura.category, 'sedan');
+
+  const fortuner = VEHICLE_CATALOG.find((v: { name: string }) => v.name === 'Toyota Fortuner Black');
+  assert.equal(fortuner.image, 'assets/images/car-toyota-fortuner-black.jpg');
+  assert.equal(fortuner.category, 'family');
+
   const elevate = VEHICLE_CATALOG.find((v: { name: string }) => v.name === 'Honda Elevate');
   assert.equal(elevate.seats, '4 Seater + 1 Driver');
   assert.equal(elevate.image, 'assets/images/car-honda-elevate.png');
@@ -230,7 +239,7 @@ test('validateEnquiry handles One Way and Round Trip Taxi rules cleanly', () => 
   assert.ok(badPassengers.errors.passengers);
 });
 
-test('buildEnquirySummary includes booking type, route, dates, passengers and vehicle', () => {
+test('buildEnquirySummary formats complete Hinglish WhatsApp enquiry and omits empty optional fields', () => {
   const oneWayMsg = buildEnquirySummary({
     name: 'Amit Verma',
     phone: '9876543210',
@@ -243,15 +252,31 @@ test('buildEnquirySummary includes booking type, route, dates, passengers and ve
     vehiclePreference: 'Honda Elevate',
     notes: 'Morning pickup',
   });
-  assert.match(oneWayMsg, /Booking Type: One Way Taxi/);
-  assert.match(oneWayMsg, /Pickup Location: Tedhi Bazar, Ayodhya/);
-  assert.match(oneWayMsg, /Destination: Lucknow Airport/);
-  assert.match(oneWayMsg, /Travel Date: 2026-12-10/);
+  assert.equal(
+    oneWayMsg,
+    [
+      'Namaste Ayodhyadham Tour Travels!',
+      'Mujhe taxi booking ke liye enquiry karni hai.',
+      'Name: Amit Verma',
+      'Mobile Number: 9876543210',
+      'Booking Type: One Way Taxi',
+      'Pickup Location: Tedhi Bazar, Ayodhya',
+      'Destination: Lucknow Airport',
+      'Travel Date: 2026-12-10',
+      'Passengers: 3',
+      'Preferred Vehicle: Honda Elevate',
+      'Additional Requirements: Morning pickup',
+      'Please mujhe booking aur fare ki details batayein.',
+      'Thank you!',
+    ].join('\n\n')
+  );
   assert.doesNotMatch(oneWayMsg, /Return Date:/);
-  assert.match(oneWayMsg, /Number of Passengers: 3/);
-  assert.match(oneWayMsg, /Preferred Vehicle: Honda Elevate/);
 
-  const roundTripMsg = buildEnquirySummary({
+  const waUrl = buildWhatsAppLink(SITE_CONFIG.whatsappNumber, oneWayMsg);
+  assert.ok(waUrl.startsWith('https://wa.me/919120671665?text='));
+  assert.equal(decodeURIComponent(waUrl.split('?text=')[1]), oneWayMsg);
+
+  const roundTripMinimalMsg = buildEnquirySummary({
     name: 'Amit Verma',
     phone: '9876543210',
     serviceType: 'Round Trip Taxi',
@@ -259,11 +284,16 @@ test('buildEnquirySummary includes booking type, route, dates, passengers and ve
     destination: 'Varanasi',
     travelDate: '2026-12-10',
     returnDate: '2026-12-12',
-    passengers: '6',
-    vehiclePreference: 'Maruti Suzuki Ertiga',
+    passengers: '',
+    vehiclePreference: '',
+    notes: '',
   });
-  assert.match(roundTripMsg, /Booking Type: Round Trip Taxi/);
-  assert.match(roundTripMsg, /Return Date: 2026-12-12/);
+  assert.match(roundTripMinimalMsg, /Booking Type: Round Trip Taxi/);
+  assert.match(roundTripMinimalMsg, /Return Date: 2026-12-12/);
+  assert.doesNotMatch(roundTripMinimalMsg, /Passengers:/);
+  assert.doesNotMatch(roundTripMinimalMsg, /Preferred Vehicle:/);
+  assert.doesNotMatch(roundTripMinimalMsg, /Additional Requirements:/);
+  assert.doesNotMatch(roundTripMinimalMsg, /undefined/);
 });
 
 test('computeCursorLerp interpolates and clamps factor cleanly', () => {
