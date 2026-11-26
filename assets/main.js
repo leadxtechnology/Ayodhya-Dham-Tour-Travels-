@@ -36,112 +36,151 @@ var SERVICE_AREAS = [
   "Naimisharanya"
 ];
 
-/* Editable Fleet & Taxi Categories
-   Note: Availability of specific models depends on booking schedule. */
+/* Editable Fleet & Taxi Categories (4 Separate Categories)
+   Note: Availability of specific models & seating depends on actual fleet booking schedule. */
 var VEHICLE_CATALOG = [
   {
-    id: "mercedes",
-    name: "Mercedes",
+    id: "maruti-swift-dzire",
+    name: "Maruti Swift Dzire",
     category: "sedan",
-    categoryLabel: "Executive Sedan",
-    seats: "4 Passengers + Driver",
-    ac: "Full AC",
-    luggage: "2–3 Bags",
-    image: "assets/images/car-sedan.jpg",
-    alt: "Ayodhya local aur outstation yatra ke liye silver Mercedes sedan taxi",
-    description: "Local darshan, railway station pickup aur lambi highway yatra ke liye aaramdayak 4-seater AC Mercedes sedan.",
-    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
-  },
-  {
-    id: "swift-dzire",
-    name: "Swift Dzire",
-    category: "sedan",
-    categoryLabel: "Compact Sedan",
+    categoryLabel: "Sedan Taxi",
     seats: "4 Passengers + Driver",
     ac: "Full AC",
     luggage: "2 Bags",
     image: "assets/images/car-swift-dzire.jpg",
-    alt: "Ayodhya cab booking ke liye white Swift Dzire compact sedan",
-    description: "Couples, akele yatri aur local Ayodhya darshan ke liye achhi gaadi. AC seating ke saath city travel ke liye upyukt.",
-    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
+    alt: "Ayodhya Local Sightseeing Taxi aur station pickup ke liye Maruti Swift Dzire Sedan",
+    description: "Ayodhya Darshan, Railway Station Pickup aur chhoti family trips ke liye aaramdayak aur saaf AC Sedan car.",
+    availabilityNote: "Travel date ke hisaab se gaadi ki availability confirm karein."
+  },
+  {
+    id: "maruti-aura",
+    name: "Maruti Aura",
+    category: "sedan",
+    categoryLabel: "Sedan Taxi",
+    seats: "4 Passengers + Driver",
+    ac: "Full AC",
+    luggage: "2–3 Bags",
+    image: "assets/images/car-sedan.jpg",
+    alt: "Airport transfer aur city darshan ke liye AC Sedan Taxi",
+    description: "Airport Transfer, local sightseeing aur short outstation trips ke liye comfortable Sedan taxi suvidha.",
+    availabilityNote: "Booking ke samay available Sedan model confirm kiya jata hai."
   },
   {
     id: "maruti-ertiga",
     name: "Maruti Ertiga",
-    category: "mpv",
-    categoryLabel: "Family 7-Seater",
+    category: "family",
+    categoryLabel: "Big Family & SUV",
     seats: "6–7 Passengers + Driver",
     ac: "Dual-Zone AC",
     luggage: "3–4 Bags",
-    image: "assets/images/car-maruti-ertiga.png",
-    alt: "Ayodhya family yatra ke liye white Maruti Ertiga 7-seater taxi",
-    description: "Family aur group ke saath Ayodhya darshan aur doosre shehron ki yatra ke liye 3-row seating wali gaadi.",
-    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
+    image: "assets/images/car-maruti-suzuki-ertiga.png",
+    alt: "Badi family aur group travel ke liye Maruti Ertiga 7-seater car",
+    description: "Parivaar aur group travel ke liye 3-row seating wali spacious 7-seater Maruti Ertiga gaadi.",
+    availabilityNote: "Travel date ke hisaab se availability confirm karein."
   },
   {
-    id: "honda-elevate",
-    name: "Honda Elevate",
-    category: "mpv",
-    categoryLabel: "Executive SUV",
-    seats: "4 Seater + 1 Driver",
-    ac: "Full AC",
-    luggage: "3–4 Bags",
-    image: "assets/images/car-honda-elevate.jpg",
-    alt: "Ayodhya local aur outstation yatra ke liye silver Honda Elevate SUV taxi",
-    description: "Ayodhya darshan aur outstation trips ke liye aaramdayak 4 seater + 1 driver AC SUV, jisme luggage ke liye achhi jagah milti hai.",
-    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
+    id: "toyota-innova",
+    name: "Toyota Innova",
+    category: "family",
+    categoryLabel: "Big Family & SUV",
+    seats: "6–7 Passengers + Driver",
+    ac: "Dual AC",
+    luggage: "4 Bags",
+    image: "assets/images/car-toyota-innova.jpg",
+    alt: "Lambi doori aur family yatra ke liye Toyota Innova 7-seater",
+    description: "Lambi doori ki yatra aur parivaar ke saath outstation travel ke liye mazboot aur aaramdayak Toyota Innova.",
+    availabilityNote: "Travel date ke hisaab se availability confirm karein."
   },
   {
     id: "toyota-innova-crysta",
     name: "Toyota Innova Crysta",
-    category: "mpv",
-    categoryLabel: "Executive Touring",
+    category: "family",
+    categoryLabel: "Big Family & SUV",
     seats: "6–7 Passengers + Driver",
     ac: "Climate Control AC",
     luggage: "4–5 Bags",
     image: "assets/images/car-innova-crysta.jpg",
-    alt: "Family aur VIP yatra ke liye white Toyota Innova Crysta",
-    description: "Lambi doori ki yatra aur parivaar ke saath safar ke liye spacious aur aaramdayak gaadi.",
-    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
+    alt: "Outstation Taxi from Ayodhya aur family trips ke liye Toyota Innova Crysta",
+    description: "Zyada jagah, smooth highway ride aur comfortable captain seats ke saath Toyota Innova Crysta.",
+    availabilityNote: "Travel date ke hisaab se availability confirm karein."
   },
   {
     id: "kia-carens",
     name: "Kia Carens",
-    category: "mpv",
-    categoryLabel: "Modern 7-Seater",
+    category: "family",
+    categoryLabel: "Big Family & SUV",
     seats: "6–7 Passengers + Driver",
     ac: "Roof-Vented AC",
     luggage: "3–4 Bags",
     image: "assets/images/car-kia-carens.png",
-    alt: "Family yatra ke liye Kia Carens 7-seater car",
-    description: "Family trip aur group travel ke liye modern 3-row seating wali gaadi, jisme safar ke dauran achhi jagah milti hai.",
-    availabilityNote: "Gaadi ki availability travel date ke hisaab se confirm karein."
+    alt: "Family yatra aur Ayodhya darshan ke liye Kia Carens 7-seater car",
+    description: "Modern 3-row seating aur comfortable interior ke saath family darshan aur outstation trips ke liye Kia Carens.",
+    availabilityNote: "Travel date ke hisaab se availability confirm karein."
   },
   {
-    id: "tempo-traveller",
-    name: "Tempo Traveller",
-    category: "group",
-    categoryLabel: "Group Coach",
-    seats: "12 / 17 / 20 Seater Options",
+    id: "honda-elevate",
+    name: "Honda Elevate",
+    category: "family",
+    categoryLabel: "Big Family & SUV",
+    seats: "4 Seater + 1 Driver",
+    ac: "Full AC",
+    luggage: "3–4 Bags",
+    image: "assets/images/car-honda-elevate.png",
+    alt: "Family trips aur outstation yatra ke liye Honda Elevate SUV",
+    description: "Chhoti family aur highway comfort ke liye spacious SUV boot space aur smooth driving experience.",
+    availabilityNote: "Anya available family gaadiyon ke saath date par confirm karein."
+  },
+  {
+    id: "tempo-12-seater",
+    name: "12 Seater Tempo Traveller",
+    category: "tempo",
+    categoryLabel: "AC Tempo Traveller",
+    seats: "12 Passengers + Driver",
+    ac: "Full AC",
+    luggage: "Roof Carrier & Boot",
+    image: "assets/images/car-tempo-traveller.jpeg",
+    alt: "Poore parivaar aur darshan group ke liye 12 Seater AC Tempo Traveller",
+    description: "10–12 logon ke family group aur mandir darshan yatra ke liye comfortable pushback AC seating.",
+    availabilityNote: "Actual fleet availability advance enquiry par confirm ki jati hai."
+  },
+  {
+    id: "tempo-17-seater",
+    name: "17 Seater Tempo Traveller",
+    category: "tempo",
+    categoryLabel: "AC Tempo Traveller",
+    seats: "17 Passengers + Driver",
     ac: "High-Capacity AC",
     luggage: "Dedicated Carrier & Boot",
-    image: "assets/images/car-tempo-traveller.jpeg",
-    alt: "Group yatra ke liye white AC Tempo Traveller Ayodhya mein",
-    description: "Bade parivaar, yatri mandali, senior citizen groups aur baraat ke mehmaanon ke liye pushback seats wala AC Tempo Traveller.",
-    availabilityNote: "Advance booking par seating capacity confirm ki jati hai."
+    image: "assets/images/car-urbania-tempo-traveller.png",
+    alt: "Yatri mandali aur bade group ke liye 17 Seater AC Tempo Traveller",
+    description: "Bade parivaar, yatri mandali aur outstation group tours ke liye Force Urbania / 17-seater AC Tempo Traveller option.",
+    availabilityNote: "Seating & model availability booking date par confirm ki jati hai."
   },
   {
-    id: "wedding-cars",
-    name: "Wedding Cars",
-    category: "other",
-    categoryLabel: "Wedding & Shubh Vivah Fleet",
-    seats: "Luxury Sedans · SUVs · Baraat Fleet",
+    id: "wedding-audi",
+    name: "Audi (Subject to Availability)",
+    category: "wedding",
+    categoryLabel: "Wedding Cars",
+    seats: "4 Passengers + Driver",
+    ac: "Luxury AC",
+    luggage: "2–3 Bags",
+    image: "assets/images/wedding-audi.png",
+    alt: "Shaadi aur dulha-dulhan ki entry ke liye Audi wedding car",
+    description: "Dulha-dulhan ki shahi entry ke liye Audi wedding car — sirf actual availability hone par hi confirm ki jati hai.",
+    availabilityNote: "Shaadi ki date par actual availability confirm karna zaroori hai."
+  },
+  {
+    id: "wedding-fleet",
+    name: "Premium Sedan, SUVs & Innova Crysta (Wedding)",
+    category: "wedding",
+    categoryLabel: "Wedding Cars",
+    seats: "Sedans · SUVs · Baraat Fleet",
     ac: "AC & Floral Decor Options",
     luggage: "Flexible Capacity",
     image: "assets/images/wedding-car-fleet.jpg",
-    alt: "Shaadi-vivah ke liye saji hui white wedding car Ayodhya mein",
-    description: "Shaadi mein dulha-dulhan ki car, parivaar ke liye gaadiyan aur baraat ke mehmaanon ke liye shuttle cars ki suvidha.",
-    availabilityNote: "Travel dates aur zaroorat ke hisaab se book karein."
+    alt: "Shaadi, baraat aur wedding guests ke liye Premium Sedan aur SUV wedding cars",
+    description: "Shaadi, Baraat aur wedding guests ke transportation ke liye Premium Sedan Cars, SUVs aur Innova Crysta ki booking.",
+    availabilityNote: "Availability ke hisaab se anya wedding gaadiyan bhi arrange ki jati hain."
   }
 ];
 
@@ -161,12 +200,39 @@ function filterVehicles(catalog, category) {
   });
 }
 
-function buildVehicleEnquiryHref(vehicleName) {
+function buildVehicleEnquiryHref(vehicleName, categoryName) {
   var base = "contact.html";
-  if (!vehicleName) {
+  var query = [];
+  if (vehicleName) {
+    query.push("vehicle=" + encodeURIComponent(vehicleName));
+  }
+  if (categoryName) {
+    query.push("category=" + encodeURIComponent(categoryName));
+  }
+  if (!query.length) {
     return base + "#enquiry-form";
   }
-  return base + "?vehicle=" + encodeURIComponent(vehicleName) + "#enquiry-form";
+  return base + "?" + query.join("&") + "#enquiry-form";
+}
+
+function resolveCategoryBookingIntent(categoryParam) {
+  var raw = String(categoryParam || "").trim().toLowerCase();
+  if (!raw) {
+    return { vehiclePreference: "", serviceType: "" };
+  }
+  if (raw.indexOf("sedan") !== -1) {
+    return { vehiclePreference: "Sedan Taxi", serviceType: "" };
+  }
+  if (raw.indexOf("family") !== -1 || raw.indexOf("suv") !== -1) {
+    return { vehiclePreference: "Big Family & SUV Car", serviceType: "" };
+  }
+  if (raw.indexOf("tempo") !== -1) {
+    return { vehiclePreference: "Tempo Traveller", serviceType: "Tempo Traveller Booking" };
+  }
+  if (raw.indexOf("wedding") !== -1) {
+    return { vehiclePreference: "Wedding Cars", serviceType: "Wedding Booking" };
+  }
+  return { vehiclePreference: String(categoryParam).trim(), serviceType: "" };
 }
 
 function buildWhatsAppLink(whatsappNumber, message) {
@@ -178,6 +244,39 @@ function buildWhatsAppLink(whatsappNumber, message) {
   return "https://wa.me/" + digits + "?text=" + text;
 }
 
+function shouldShowReturnDate(serviceType) {
+  return String(serviceType || "").trim() === "Round Trip Taxi";
+}
+
+function buildEnquirySummary(payload, businessName) {
+  var name = String((payload && payload.name) || "").trim();
+  var phone = String((payload && payload.phone) || "").trim();
+  var serviceType = String((payload && payload.serviceType) || "").trim();
+  var pickupLocation = String((payload && payload.pickupLocation) || "").trim();
+  var destination = String((payload && payload.destination) || "").trim();
+  var travelDate = String((payload && payload.travelDate) || "").trim();
+  var returnDate = String((payload && payload.returnDate) || "").trim();
+  var passengers = String((payload && payload.passengers) || "").trim();
+  var vehiclePreference = String((payload && payload.vehiclePreference) || "").trim();
+  var notes = String((payload && payload.notes) || "").trim();
+
+  var lines = [
+    "Travel Enquiry — " + (businessName || SITE_CONFIG.businessName),
+    "Naam: " + name,
+    "Mobile: " + phone,
+    "Booking Type: " + serviceType,
+    "Pickup Location: " + pickupLocation,
+    "Destination: " + destination,
+    "Travel Date: " + travelDate,
+    shouldShowReturnDate(serviceType) && returnDate ? "Return Date: " + returnDate : "",
+    passengers ? "Number of Passengers: " + passengers : "",
+    "Preferred Vehicle: " + (vehiclePreference || "Koi Bhi Available"),
+    notes ? "Khaas Jaankari: " + notes : ""
+  ];
+
+  return lines.filter(Boolean).join("\n");
+}
+
 function validateEnquiry(data) {
   var errors = {};
   var name = String((data && data.name) || "").trim();
@@ -185,7 +284,10 @@ function validateEnquiry(data) {
   var email = String((data && data.email) || "").trim();
   var serviceType = String((data && data.serviceType) || "").trim();
   var pickupLocation = String((data && data.pickupLocation) || "").trim();
+  var destination = String((data && data.destination) || "").trim();
   var travelDate = String((data && data.travelDate) || "").trim();
+  var returnDate = String((data && data.returnDate) || "").trim();
+  var passengersRaw = String((data && data.passengers) || "").trim();
 
   if (name.length < 2) {
     errors.name = "Kripya apna poora naam likhein (kam se kam 2 akshar).";
@@ -201,15 +303,34 @@ function validateEnquiry(data) {
   }
 
   if (!serviceType) {
-    errors.serviceType = "Kripya travel service chunein.";
+    errors.serviceType = "Kripya batayein aapko kis tarah ki taxi chahiye.";
   }
 
   if (pickupLocation.length < 2) {
     errors.pickupLocation = "Kripya pickup location likhein.";
   }
 
+  if (destination.length < 2) {
+    errors.destination = "Kripya destination (kahan jaana hai) likhein.";
+  }
+
   if (!travelDate) {
-    errors.travelDate = "Kripya apni yatra ki date chunein.";
+    errors.travelDate = "Kripya apni travel date chunein.";
+  }
+
+  if (shouldShowReturnDate(serviceType)) {
+    if (!returnDate) {
+      errors.returnDate = "Round Trip Taxi ke liye return date chunein.";
+    } else if (travelDate && returnDate < travelDate) {
+      errors.returnDate = "Return date travel date ke barabar ya uske baad ki chunein.";
+    }
+  }
+
+  if (passengersRaw) {
+    var passengerNum = Number(passengersRaw);
+    if (!Number.isInteger(passengerNum) || passengerNum < 1 || passengerNum > 100) {
+      errors.passengers = "Kripya sahi passengers ki sankhya likhein (1–100).";
+    }
   }
 
   return {
@@ -508,9 +629,43 @@ function createVehicleCardMarkup(vehicle, idx) {
 }
 
 function initVehiclesCatalogPage() {
-  var grid = document.getElementById("vehicles-catalog-grid");
+  var categorySections = document.querySelectorAll(".vehicle-category-section[data-category-section]");
   var countEl = document.getElementById("fleet-count");
   var filterButtons = document.querySelectorAll(".filter-tab[data-filter]");
+
+  if (categorySections.length && filterButtons.length) {
+    function applySectionFilter(selected) {
+      var visibleCount = 0;
+      categorySections.forEach(function (sec) {
+        var cat = sec.getAttribute("data-category-section");
+        var show = !selected || selected === "all" || cat === selected;
+        sec.hidden = !show;
+        if (show) {
+          visibleCount += 1;
+        }
+      });
+      if (countEl) {
+        countEl.textContent = visibleCount + (visibleCount === 1 ? " category dikh rahi hai" : " categories dikh rahi hain");
+      }
+    }
+
+    filterButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var selected = btn.getAttribute("data-filter") || "all";
+        filterButtons.forEach(function (other) {
+          var active = other === btn;
+          other.classList.toggle("is-active", active);
+          other.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+        applySectionFilter(selected);
+      });
+    });
+
+    applySectionFilter("all");
+    return;
+  }
+
+  var grid = document.getElementById("vehicles-catalog-grid");
   if (!grid || !filterButtons.length) {
     return;
   }
@@ -540,16 +695,53 @@ function initVehiclesCatalogPage() {
   renderCategory("all");
 }
 
+function initBookingIntentLinks() {
+  var intentLinks = document.querySelectorAll("[data-booking-type], [data-route-destination]");
+  if (!intentLinks.length) {
+    return;
+  }
+  intentLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      try {
+        var bookingType = link.getAttribute("data-booking-type");
+        var routeDest = link.getAttribute("data-route-destination");
+        var routePickup = link.getAttribute("data-route-pickup");
+        if (bookingType) {
+          window.sessionStorage.setItem("ayodhya_booking_type", bookingType);
+        }
+        if (routeDest) {
+          window.sessionStorage.setItem("ayodhya_route_destination", routeDest);
+        }
+        if (routePickup) {
+          window.sessionStorage.setItem("ayodhya_route_pickup", routePickup);
+        }
+      } catch (e) {
+        // Ignore storage errors in restricted browsing contexts
+      }
+    });
+  });
+}
+
 function initContactPage() {
   var form = document.getElementById("enquiry-form");
   var callBtn = document.getElementById("call-now-btn");
   var whatsappBtn = document.getElementById("whatsapp-btn");
   var actionFeedback = document.getElementById("contact-action-feedback");
   var vehicleSelect = document.getElementById("vehicle-preference");
+  var serviceSelect = document.getElementById("service-type");
+  var returnDateGroup = document.getElementById("return-date-group");
+  var returnDateInput = document.getElementById("return-date");
+  var returnDateError = document.getElementById("error-return-date");
+  var dateInput = document.getElementById("travel-date");
+  var pickupInput = document.getElementById("pickup-location");
+  var destinationInput = document.getElementById("destination");
+
+  var params = new URLSearchParams(window.location.search);
+  var requestedCategory = params.get("category");
+  var categoryIntent = resolveCategoryBookingIntent(requestedCategory);
 
   if (vehicleSelect) {
-    var params = new URLSearchParams(window.location.search);
-    var requestedVehicle = params.get("vehicle");
+    var requestedVehicle = params.get("vehicle") || categoryIntent.vehiclePreference;
     if (requestedVehicle) {
       var match = Array.prototype.find.call(vehicleSelect.options, function (opt) {
         return opt.value.toLowerCase() === requestedVehicle.toLowerCase();
@@ -560,14 +752,86 @@ function initContactPage() {
     }
   }
 
-  var dateInput = document.getElementById("travel-date");
+  var now = new Date();
+  var yyyy = String(now.getFullYear());
+  var mm = String(now.getMonth() + 1).padStart(2, "0");
+  var dd = String(now.getDate()).padStart(2, "0");
+  var todayIso = yyyy + "-" + mm + "-" + dd;
+
   if (dateInput) {
-    var now = new Date();
-    var yyyy = String(now.getFullYear());
-    var mm = String(now.getMonth() + 1).padStart(2, "0");
-    var dd = String(now.getDate()).padStart(2, "0");
-    dateInput.setAttribute("min", yyyy + "-" + mm + "-" + dd);
+    dateInput.setAttribute("min", todayIso);
   }
+  if (returnDateInput) {
+    returnDateInput.setAttribute("min", todayIso);
+  }
+
+  function syncReturnDateVisibility() {
+    if (!serviceSelect || !returnDateGroup || !returnDateInput) {
+      return;
+    }
+    var isRoundTrip = shouldShowReturnDate(serviceSelect.value);
+    returnDateGroup.hidden = !isRoundTrip;
+    if (isRoundTrip) {
+      returnDateInput.setAttribute("required", "required");
+      var minDate = (dateInput && dateInput.value) ? dateInput.value : todayIso;
+      returnDateInput.setAttribute("min", minDate);
+    } else {
+      returnDateInput.removeAttribute("required");
+      returnDateInput.value = "";
+      returnDateInput.classList.remove("is-invalid");
+      returnDateInput.removeAttribute("aria-invalid");
+      if (returnDateError) {
+        returnDateError.textContent = "";
+      }
+    }
+  }
+
+  if (serviceSelect) {
+    var requestedService = params.get("service") || params.get("bookingType") || categoryIntent.serviceType;
+    if (!requestedService) {
+      try {
+        requestedService = window.sessionStorage.getItem("ayodhya_booking_type") || "";
+        window.sessionStorage.removeItem("ayodhya_booking_type");
+      } catch (e) {
+        requestedService = "";
+      }
+    }
+    if (requestedService) {
+      var serviceMatch = Array.prototype.find.call(serviceSelect.options, function (opt) {
+        return opt.value.toLowerCase() === requestedService.toLowerCase();
+      });
+      if (serviceMatch) {
+        serviceSelect.value = serviceMatch.value;
+      }
+    }
+    serviceSelect.addEventListener("change", syncReturnDateVisibility);
+  }
+
+  if (pickupInput || destinationInput) {
+    try {
+      var storedPickup = window.sessionStorage.getItem("ayodhya_route_pickup");
+      var storedDest = window.sessionStorage.getItem("ayodhya_route_destination");
+      if (storedPickup && pickupInput && !pickupInput.value) {
+        pickupInput.value = storedPickup;
+      }
+      if (storedDest && destinationInput && !destinationInput.value) {
+        destinationInput.value = storedDest;
+      }
+      window.sessionStorage.removeItem("ayodhya_route_pickup");
+      window.sessionStorage.removeItem("ayodhya_route_destination");
+    } catch (e) {
+      // Ignore storage errors
+    }
+  }
+
+  if (dateInput && returnDateInput) {
+    dateInput.addEventListener("change", function () {
+      var minVal = dateInput.value || todayIso;
+      returnDateInput.setAttribute("min", minVal);
+    });
+  }
+
+  syncReturnDateVisibility();
 
   if (callBtn) {
     if (SITE_CONFIG.phoneTel) {
@@ -631,7 +895,10 @@ function initContactPage() {
       email: "error-email",
       serviceType: "error-service",
       pickupLocation: "error-pickup",
-      travelDate: "error-date"
+      destination: "error-destination",
+      travelDate: "error-date",
+      returnDate: "error-return-date",
+      passengers: "error-passengers"
     };
     var fieldIds = {
       name: "customer-name",
@@ -639,7 +906,10 @@ function initContactPage() {
       email: "customer-email",
       serviceType: "service-type",
       pickupLocation: "pickup-location",
-      travelDate: "travel-date"
+      destination: "destination",
+      travelDate: "travel-date",
+      returnDate: "return-date",
+      passengers: "passenger-count"
     };
 
     Object.keys(errors).forEach(function (key) {
@@ -660,14 +930,17 @@ function initContactPage() {
     clearFieldErrors();
 
     var payload = {
-      name: form.elements.name.value,
-      phone: form.elements.phone.value,
-      email: form.elements.email.value,
-      serviceType: form.elements.serviceType.value,
-      vehiclePreference: form.elements.vehiclePreference.value,
-      pickupLocation: form.elements.pickupLocation.value,
-      travelDate: form.elements.travelDate.value,
-      notes: form.elements.notes.value
+      name: form.elements.name ? form.elements.name.value : "",
+      phone: form.elements.phone ? form.elements.phone.value : "",
+      email: form.elements.email ? form.elements.email.value : "",
+      serviceType: form.elements.serviceType ? form.elements.serviceType.value : "",
+      vehiclePreference: form.elements.vehiclePreference ? form.elements.vehiclePreference.value : "",
+      pickupLocation: form.elements.pickupLocation ? form.elements.pickupLocation.value : "",
+      destination: form.elements.destination ? form.elements.destination.value : "",
+      travelDate: form.elements.travelDate ? form.elements.travelDate.value : "",
+      returnDate: form.elements.returnDate ? form.elements.returnDate.value : "",
+      passengers: form.elements.passengers ? form.elements.passengers.value : "",
+      notes: form.elements.notes ? form.elements.notes.value : ""
     };
 
     var result = validateEnquiry(payload);
@@ -685,30 +958,24 @@ function initContactPage() {
       return;
     }
 
-    var summaryLines = [
-      "Travel Enquiry — " + SITE_CONFIG.businessName,
-      "Naam: " + payload.name.trim(),
-      "Mobile: " + payload.phone.trim(),
-      "Service: " + payload.serviceType,
-      "Pasand Ki Gaadi: " + (payload.vehiclePreference || "Koi Bhi Available"),
-      "Pickup Location: " + payload.pickupLocation.trim(),
-      "Travel Date: " + payload.travelDate,
-      payload.notes.trim() ? "Khaas Jaankari: " + payload.notes.trim() : ""
-    ].filter(Boolean).join("\n");
-
+    var summaryLines = buildEnquirySummary(payload, SITE_CONFIG.businessName);
     var waHref = buildWhatsAppLink(SITE_CONFIG.whatsappNumber, summaryLines);
     var hasRealEmail = Boolean(SITE_CONFIG.email && !/\.example$/i.test(SITE_CONFIG.email));
-    var mailtoSubject = encodeURIComponent("Booking Enquiry: " + payload.name.trim() + " (" + payload.travelDate + ")");
+    var mailtoSubject = encodeURIComponent("Booking Enquiry: " + payload.name.trim() + " — " + payload.serviceType + " (" + payload.travelDate + ")");
     var mailtoBody = encodeURIComponent(summaryLines);
     var mailHref = hasRealEmail ? ("mailto:" + SITE_CONFIG.email + "?subject=" + mailtoSubject + "&body=" + mailtoBody) : "";
     var telHref = SITE_CONFIG.phoneTel ? ("tel:" + SITE_CONFIG.phoneTel) : "";
+    var routeText = payload.pickupLocation.trim() + " se " + payload.destination.trim();
+    var dateSummary = shouldShowReturnDate(payload.serviceType) && payload.returnDate
+      ? payload.travelDate + " se " + payload.returnDate
+      : payload.travelDate;
 
     if (statusBox) {
       statusBox.hidden = false;
       statusBox.className = "form-status is-success";
       statusBox.innerHTML =
-        "<strong>" + escapeHtml(payload.name.trim()) + " ji, aapki booking details taiyaar hain.</strong> " +
-        "<strong>" + escapeHtml(payload.vehiclePreference || payload.serviceType) + "</strong> (<span class=\"tabular-nums\">" + escapeHtml(payload.travelDate) + "</span>) ke liye booking confirm karne ke liye neeche WhatsApp ya Call button par click karein." +
+        "<strong>" + escapeHtml(payload.name.trim()) + " ji, aapki booking enquiry details taiyaar hain.</strong> " +
+        "<strong>" + escapeHtml(payload.serviceType) + "</strong> (" + escapeHtml(routeText) + ", <span class=\"tabular-nums\">" + escapeHtml(dateSummary) + "</span>) ke liye hamari team se baat karne aur availability confirm karne ke liye neeche WhatsApp ya Call button par click karein." +
         '<div class="form-status-actions">' +
           (waHref
             ? '<a class="btn btn-whatsapp btn-sm" href="' + escapeHtml(waHref) + '" target="_blank" rel="noopener noreferrer">WhatsApp Par Bhejein</a>'
@@ -722,6 +989,7 @@ function initContactPage() {
     }
 
     form.reset();
+    syncReturnDateVisibility();
   });
 }
 
@@ -892,6 +1160,7 @@ function initApp() {
   initScrollReveals();
   initCursorAnimation();
   syncDynamicContactText();
+  initBookingIntentLinks();
   initVehiclesCatalogPage();
   initContactPage();
 }
@@ -907,8 +1176,11 @@ if (typeof module !== "undefined" && module.exports) {
     VEHICLE_CATALOG: VEHICLE_CATALOG,
     filterVehicles: filterVehicles,
     validateEnquiry: validateEnquiry,
+    shouldShowReturnDate: shouldShowReturnDate,
+    buildEnquirySummary: buildEnquirySummary,
     buildWhatsAppLink: buildWhatsAppLink,
     buildVehicleEnquiryHref: buildVehicleEnquiryHref,
+    resolveCategoryBookingIntent: resolveCategoryBookingIntent,
     computeCursorLerp: computeCursorLerp
   };
 }

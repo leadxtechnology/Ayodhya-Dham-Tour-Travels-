@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us &amp; Taxi Booking | Ayodhyadham Tour Travels — Tedhi Bazar, Ayodhya</title>
+    <title>Contact Us &amp; One Way / Round Trip Taxi Booking | Ayodhyadham Tour Travels</title>
     <meta
       name="description"
-      content="Tedhi Bazar, Ayodhya Railway Crossing (Pin 224123) par Ayodhyadham Tour Travels se sampark karein. Taxi, Tempo Traveller aur wedding cars ki online booking enquiry bhejein."
+      content="Tedhi Bazar, Ayodhya Railway Crossing par Ayodhyadham Tour Travels se One Way Taxi, Round Trip Taxi, Local Darshan, Tempo Traveller aur wedding cars ki booking enquiry bhejein."
     />
-    <meta property="og:title" content="Contact Us | Ayodhyadham Tour Travels" />
+    <meta property="og:title" content="Contact Us &amp; Taxi Booking | Ayodhyadham Tour Travels" />
     <meta
       property="og:description"
-      content="Ayodhya mein cab booking, outstation tours, Tempo Traveller aur shaadi ki gaadiyon ki booking ke liye humse sampark karein."
+      content="Ayodhya mein One Way Taxi, Round Trip Cab Booking, outstation tours aur AC Tempo Traveller ke liye humse sampark karein."
     />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -230,7 +230,7 @@
                 <div>
                   <span class="contact-detail-label">Hamari Services Kahan-Kahan Hai</span>
                   <p class="contact-detail-value">
-                    Ayodhya Local Darshan, Ayodhya Railway Stations &amp; Airport, Outstation Uttar Pradesh &amp; Shaadi-Vivah Events
+                    Ayodhya Local Darshan, One Way Taxi, Round Trip Taxi, Railway Stations &amp; Airport Pickup, Outstation Uttar Pradesh &amp; Shaadi-Vivah Events
                   </p>
                 </div>
               </div>
@@ -293,60 +293,103 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="form-label" for="service-type">Service Chunein *</label>
+                    <label class="form-label" for="service-type">Aapko Kis Tarah Ki Taxi Chahiye? *</label>
                     <select id="service-type" name="serviceType" class="form-select" required>
-                      <option value="">Travel service chunein</option>
-                      <option value="Local Ayodhya Taxi">Local Ayodhya Taxi</option>
-                      <option value="Railway / Airport Transfer">Railway / Airport Pickup &amp; Drop</option>
+                      <option value="">Taxi ya booking type chunein</option>
+                      <option value="One Way Taxi">One Way Taxi</option>
+                      <option value="Round Trip Taxi">Round Trip Taxi</option>
+                      <option value="Local Ayodhya Darshan">Local Ayodhya Darshan</option>
+                      <option value="Airport / Railway Station Pickup & Drop">Airport / Railway Station Pickup &amp; Drop</option>
                       <option value="Outstation Tour">Outstation Tour</option>
-                      <option value="Tempo Traveller Group Tour">Tempo Traveller Group Tour</option>
-                      <option value="Wedding Transportation">Shaadi-Vivah Ke Liye Gaadi</option>
+                      <option value="Wedding Booking">Wedding Booking</option>
+                      <option value="Tempo Traveller Booking">Tempo Traveller Booking</option>
                     </select>
                     <span id="error-service" class="field-error" aria-live="polite"></span>
                   </div>
 
                   <div class="form-group">
-                    <label class="form-label" for="vehicle-preference">Pasand Ki Gaadi</label>
-                    <select id="vehicle-preference" name="vehiclePreference" class="form-select">
-                      <option value="Any Available Vehicle">Koi Bhi Available Gaadi</option>
-                      <option value="Mercedes">Mercedes</option>
-                      <option value="Swift Dzire">Swift Dzire</option>
-                      <option value="Maruti Ertiga">Maruti Ertiga</option>
-                      <option value="Honda Elevate">Honda Elevate</option>
-                      <option value="Toyota Innova Crysta">Toyota Innova Crysta</option>
-                      <option value="Kia Carens">Kia Carens</option>
-                      <option value="Tempo Traveller">Tempo Traveller</option>
-                      <option value="Wedding Cars">Wedding Cars</option>
-                    </select>
-                    <span class="field-error"></span>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="form-label" for="travel-date">Yatra Ki Date *</label>
-                    <input id="travel-date" name="travelDate" class="form-input tabular-nums" type="date" required />
-                    <span id="error-date" class="field-error" aria-live="polite"></span>
-                  </div>
-
-                  <div class="form-group form-field-full">
-                    <label class="form-label" for="pickup-location">Pickup Location Aur Kahan Jaana Hai *</label>
+                    <label class="form-label" for="pickup-location">Pickup Location *</label>
                     <input
                       id="pickup-location"
                       name="pickupLocation"
                       class="form-input"
                       type="text"
-                      placeholder="Jaise: Ayodhya Dham Junction se Ram Mandir / Varanasi"
+                      placeholder="Jaise: Ayodhya Dham Junction / Tedhi Bazar"
                       required
                     />
                     <span id="error-pickup" class="field-error" aria-live="polite"></span>
                   </div>
 
+                  <div class="form-group">
+                    <label class="form-label" for="destination">Destination *</label>
+                    <input
+                      id="destination"
+                      name="destination"
+                      class="form-input"
+                      type="text"
+                      placeholder="Jaise: Lucknow / Varanasi / Ram Mandir"
+                      required
+                    />
+                    <span id="error-destination" class="field-error" aria-live="polite"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="travel-date">Travel Date *</label>
+                    <input id="travel-date" name="travelDate" class="form-input tabular-nums" type="date" required />
+                    <span id="error-date" class="field-error" aria-live="polite"></span>
+                  </div>
+
+                  <div id="return-date-group" class="form-group" hidden>
+                    <label class="form-label" for="return-date">Return Date *</label>
+                    <input id="return-date" name="returnDate" class="form-input tabular-nums" type="date" />
+                    <span id="error-return-date" class="field-error" aria-live="polite"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="passenger-count">Number of Passengers</label>
+                    <input
+                      id="passenger-count"
+                      name="passengers"
+                      class="form-input tabular-nums"
+                      type="number"
+                      min="1"
+                      max="100"
+                      placeholder="Jaise: 4"
+                    />
+                    <span id="error-passengers" class="field-error" aria-live="polite"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="vehicle-preference">Preferred Vehicle</label>
+                    <select id="vehicle-preference" name="vehiclePreference" class="form-select">
+                      <option value="Any Available Vehicle">Koi Bhi Available Gaadi</option>
+                      <option value="Sedan Taxi">Sedan Taxi (Dzire / Aura)</option>
+                      <option value="Maruti Swift Dzire">Maruti Swift Dzire</option>
+                      <option value="Maruti Aura">Maruti Aura</option>
+                      <option value="Big Family & SUV Car">Big Family &amp; SUV Car (6–7 Seater)</option>
+                      <option value="Maruti Ertiga">Maruti Ertiga</option>
+                      <option value="Toyota Innova">Toyota Innova</option>
+                      <option value="Toyota Innova Crysta">Toyota Innova Crysta</option>
+                      <option value="Kia Carens">Kia Carens</option>
+                      <option value="Honda Elevate">Honda Elevate</option>
+                      <option value="Tempo Traveller">Tempo Traveller (12 / 17 / 20 Seater)</option>
+                      <option value="12 Seater Tempo Traveller">12 Seater Tempo Traveller</option>
+                      <option value="17 Seater Tempo Traveller">17 Seater Tempo Traveller</option>
+                      <option value="20 Seater Tempo Traveller">20 Seater Tempo Traveller</option>
+                      <option value="Wedding Cars">Wedding Cars</option>
+                      <option value="Audi (Subject to Availability)">Audi (Subject to Availability)</option>
+                      <option value="Premium Sedan, SUVs & Innova Crysta (Wedding)">Premium Sedan, SUVs &amp; Innova Crysta (Wedding)</option>
+                    </select>
+                    <span class="field-error"></span>
+                  </div>
+
                   <div class="form-group form-field-full">
-                    <label class="form-label" for="travel-notes">Passengers Aur Khaas Jaankari</label>
+                    <label class="form-label" for="travel-notes">Khaas Jaankari (Optional)</label>
                     <textarea
                       id="travel-notes"
                       name="notes"
                       class="form-textarea"
-                      placeholder="Kitne log hain, kitne din ki yatra hai, pickup time ya shaadi ki details likhein"
+                      placeholder="Pickup time, luggage ya trip se judi koi aur zaroori baat likhein"
                     ></textarea>
                   </div>
                 </div>
@@ -434,6 +477,8 @@
           <div>
             <h3 class="footer-heading">Services</h3>
             <ul class="footer-links">
+              <li><a href="contact.html#enquiry-form" data-booking-type="One Way Taxi">One Way Taxi Service</a></li>
+              <li><a href="contact.html#enquiry-form" data-booking-type="Round Trip Taxi">Round Trip Taxi Service</a></li>
               <li><a href="vehicles.html">Sedan &amp; Swift Dzire Taxi</a></li>
               <li><a href="vehicles.html">Ertiga, Innova &amp; Carens</a></li>
               <li><a href="vehicles.html">Tempo Traveller Booking</a></li>
